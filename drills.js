@@ -69,3 +69,5 @@ function palindrome(string) {
 }
 
 console.log(palindrome("aqeryhgf"));
+
+module.export = {palindrome}
