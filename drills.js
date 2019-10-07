@@ -1,4 +1,4 @@
-const HashMap = require("./hashmap");
+const HashMap = require("./hashmapcopy");
 
 function main() {
   let lor = new HashMap();
@@ -16,16 +16,20 @@ function main() {
   lor.set("LadyOfLight", "Galadriel");
   lor.set("HalfElven", "Arwen");
   lor.set("Ent", "Treebeard");
-  console.log(lor);
+  print(lor)
 }
 
 function print(map) {
   for (let i = 0; i < map.length; i++) {
-    console.log(map._hashTable[i]);
+    if(map._hashTable[i]){
+      console.log(map._hashTable[i].value);
+      if (map._hashTable[i].value.next !== null)
+        console.log(map._hashTable[i].value.next);
+    }
   }
 }
 
-//main()
+main()
 
 const WhatDoesThisDo = function() {
   let str1 = "Hello World.";
@@ -68,6 +72,5 @@ function palindrome(string) {
   return ret;
 }
 
-console.log(palindrome("aqeryhgf"));
+//.console.log(palindrome("aqeryhgf"));
 
-module.export = {palindrome}
